@@ -1,9 +1,12 @@
-library(DT)
-library(shiny)
-library(shinydashboard)
 
 shinyUI(dashboardPage(
-  dashboardHeader(title = "DEATHS"),
+  skin = "black",
+  dashboardHeader(title = "Mortality",
+                  dropdownMenu(type = "notifications",
+                               notificationItem(
+                                 text = "You Will Die.",
+                                 icon = icon("exclamation-triangle"),
+                                 status = "warning"))),
   dashboardSidebar(
     
     sidebarMenu(
@@ -11,8 +14,9 @@ shinyUI(dashboardPage(
       menuItem("Data", tabName = "data", icon = icon("database"))
     ),
     selectizeInput("selected",
-                   "Select Item to Display",
-                   choice)
+                   "Cause of Mortality",
+                   choice,
+                   selected = "All causes")
   ),
   dashboardBody(
     tags$head(
@@ -23,7 +27,7 @@ shinyUI(dashboardPage(
               fluidRow(infoBoxOutput("maxBox"),
                        infoBoxOutput("minBox"),
                        infoBoxOutput("avgBox")),
-              fluidRow(box(htmlOutput("map"), height = 300))),
+              fluidRow(box(leafletOutput("map", height = 900), width = 12))),
       tabItem(tabName = "data",
               fluidRow(box(DT::dataTableOutput("table"), width = 12)))
     )
