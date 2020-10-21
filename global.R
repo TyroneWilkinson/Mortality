@@ -9,7 +9,9 @@
 # library(sf)
 # library(ggplot2)
 # library(viridis)
-# 
+# ##############################################################################
+# # STOP HERE AND GO TO LINE #209
+# ##############################################################################
 # ToTitle <- function(cvect) {
 #   # Translates characters in character vectors from upper or lower case to
 #   # title case.
@@ -204,12 +206,14 @@
 #             position = "bottomright",
 #             title = "Mortality per 100,000 persons")
 # ###############################################################################
+# # START HERE; UNCOMMENT BELOW
+# ###############################################################################
 # # SAVE AND RESTORE DATA
-# saveRDS(merged_df, file = './data/merged_df.RDS')
-# saveRDS(states, file = './data/states.RDS')
-# saveRDS(all.state.years, file = './data/allstateyears.RDS')
-# saveRDS(country.years, file = './data/countryyears.RDS')
-# saveRDS(og.country.years, file = './data/ogcountryyears.RDS')
+# #saveRDS(merged_df, file = './data/merged_df.RDS')
+# #saveRDS(states, file = './data/states.RDS')
+# #saveRDS(all.state.years, file = './data/allstateyears.RDS')
+# #saveRDS(country.years, file = './data/countryyears.RDS')
+# #saveRDS(og.country.years, file = './data/ogcountryyears.RDS')
 # 
 # merged_df <- readRDS(file = './data/merged_df.RDS')
 # states <- readRDS(file = './data/states.RDS')
